@@ -25,6 +25,8 @@ end
   get "help" => "pages#help"
  
   root :to => "pages#home"
+  resources :pages
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
