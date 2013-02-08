@@ -1,0 +1,26 @@
+<h1><%= @user.username %></h1>
+<%= @user.bio %>
+<div>
+<%= link_to_unless_current "tweets", @user %>
+<%= link_to_unless_current "favorites", favorites_user_path(@user) %>
+<%= link_to_unless_current "following", following_user_path(@user) %>
+<%= link_to_unless_current "followers", followers_user_path(@user) %>
+</div>
+<hr />
+<% unless @tweets.nil? %>
+<div id = "tweets">
+	<%= render @tweets %>
+</div>
+<% end %>
+
+<% unless @users.nil? %>
+	<div id="users">
+		<%= render @users%>
+	</div>
+<% end %>
+
+<% unless @favorites.nil? %>
+<div id="favorites">
+	<%= render @favorites.map{|i| i.tweet} %>
+</div>
+<% end %>
