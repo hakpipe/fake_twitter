@@ -1,4 +1,6 @@
 Miniblog::Application.routes.draw do
+  resources :products
+
   resources :friendships, :only => [:create, :destroy]
 
   resources :favorites, :only =>[:create, :destroy]
@@ -25,7 +27,7 @@ end
   get "help" => "pages#help"
  
   root :to => "pages#home"
-  resources :pages
+    
  
 
   # The priority is based upon order of creation:
