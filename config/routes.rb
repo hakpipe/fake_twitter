@@ -27,6 +27,7 @@ end
   get "help" => "pages#help"
  
   root :to => "pages#home"
+  root :to => "products#index"
     
  
 
